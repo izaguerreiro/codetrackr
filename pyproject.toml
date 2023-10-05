@@ -1,0 +1,23 @@
+[tool.poetry]
+name = 'codetrackr'
+version = '0.0.1'
+description = 'Software asset management system'
+authors = ['Izabela Guerreiro <izaguerreiro@gmail.com>']
+
+[[tool.poetry.source]]
+name = 'PyPI'
+priority = 'primary'
+
+[tool.poetry.dependencies]
+python = '^3.11'
+django = "^4.2.2"
+django-extensions = "^3.2.3"
+mypy = "^1.3.0"
+pydotplus = "^2.0.2"
+djangorestframework = "^3.14.0"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+testpaths = [
+    "tests",
+]
