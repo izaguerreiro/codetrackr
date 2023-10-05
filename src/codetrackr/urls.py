@@ -19,7 +19,13 @@ from django.urls import path, include
 
 from rest_framework.routers import DefaultRouter
 
-from asset.views import AssetModelViewSet, SupplierModelViewSet
+from asset.views import (
+    AssetModelViewSet,
+    assets_expired,
+    assets_used,
+    assets_unused,
+    SupplierModelViewSet,
+)
 
 
 router = DefaultRouter()
@@ -27,6 +33,9 @@ router.register("assets", AssetModelViewSet, basename="asset")
 router.register("suppliers", SupplierModelViewSet, basename="supplier")
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
+    path("admin/", admin.site.urls),
+    path("api/", include(router.urls)),
+    path("api/reports/assets/used", assets_used, name="assets-used"),
+    path("api/reports/assets/unused", assets_unused, name="assets-unused"),
+    path("api/reports/assets/expired", assets_expired, name="assets-expired"),
 ]

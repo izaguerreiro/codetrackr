@@ -20,7 +20,7 @@ class Supplier(BaseModel):
     status = models.CharField(
         max_length=SupplierStatus.get_database_max_length(),
         choices=SupplierStatus.get_database_choices(),
-        default=SupplierStatus.REVIEW
+        default=SupplierStatus.REVIEW,
     )
     history = HistoricalRecords()
 
@@ -32,7 +32,7 @@ class Asset(BaseModel):
     license_type = models.CharField(
         max_length=LicenceType.get_database_max_length(),
         choices=LicenceType.get_database_choices(),
-        default=LicenceType.COMERCIAL
+        default=LicenceType.COMERCIAL,
     )
     supplier_id = models.ForeignKey(
         Supplier, on_delete=models.CASCADE, related_name="suppliers"
@@ -40,12 +40,12 @@ class Asset(BaseModel):
     acquisition_date = models.DateTimeField(auto_now_add=True)
     expiration_date = models.DateTimeField()
     serial_number = models.CharField(max_length=255)
-    location = models.CharField(max_length=100)
-    responsible = models.CharField(max_length=100)
+    location = models.CharField(max_length=100, null=True, blank=True)
+    responsible = models.CharField(max_length=100, null=True, blank=True)
     cost = models.DecimalField(max_digits=8, decimal_places=2)
     status = models.CharField(
         max_length=AssetStatus.get_database_max_length(),
         choices=AssetStatus.get_database_choices(),
-        default=AssetStatus.ACTIVE
+        default=AssetStatus.ACTIVE,
     )
     history = HistoricalRecords()
