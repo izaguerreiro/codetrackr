@@ -9,12 +9,12 @@ from .serializers import AssetSerializer, SupplierSerializer
 
 
 class AssetModelViewSet(viewsets.ModelViewSet):
-    queryset = Asset.objects.all()
+    queryset = Asset.objects.all().order_by("name")
     serializer_class = AssetSerializer
 
 
 class SupplierModelViewSet(viewsets.ModelViewSet):
-    queryset = Supplier.objects.all()
+    queryset = Supplier.objects.order_by("name")
     serializer_class = SupplierSerializer
 
 
