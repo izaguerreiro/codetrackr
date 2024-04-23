@@ -64,6 +64,20 @@ files = [
 Django = ">=3.2"
 
 [[package]]
+name = "django-simple-history"
+version = "3.5.0"
+description = "Store model history and view/revert changes from admin site."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "django-simple-history-3.5.0.tar.gz", hash = "sha256:eef2943d7c846270f11c8136f38a3ba00de2bebd7b1b89037de5d9b148ed677a"},
+    {file = "django_simple_history-3.5.0-py3-none-any.whl", hash = "sha256:0030b3bb5ed219d6453320213e75cfa00dab7a381946124df9411729101c8874"},
+]
+
+[package.dependencies]
+asgiref = ">=3.6"
+
+[[package]]
 name = "djangorestframework"
 version = "3.14.0"
 description = "Web APIs for Django, made easy."
@@ -255,4 +269,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "13fdccc62a83134507009cf4ed92717acf3eb6a65a8541c1948acc9f0db8e143"
+content-hash = "26f2fb63ff539066e47447e590da38b2d72b731a6ea198838a63020fa0dcefe7"
